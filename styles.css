@@ -1,0 +1,214 @@
+/* Reset default padding/margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+header {
+    background-color: #00bcd4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 110%;
+    z-index: 1000;
+}
+
+main {
+    width: 100%;
+}
+
+/* Section base styles */
+section {
+    height: 100vh;
+    display: flex;
+    position: relative;
+    background-size: cover;
+    width: 100vw;
+    margin: 0;
+    padding: 20px;
+    align-items: center; /* Center content vertically */
+}
+
+/* Alternate background justification */
+#about {
+    background: url('./images/AboutMe.png') no-repeat right center;
+    background-size: cover;
+    justify-content: flex-start; /* Align text box to the left */
+}
+
+#portfolio {
+    background: url('./images/PortfolioProjects.png') no-repeat left center;
+    background-size: cover;
+    justify-content: flex-end; /* Align text box to the right */
+}
+
+#experience {
+    background: url('./images/experience.png') no-repeat right center;
+    background-size: cover;
+    justify-content: flex-start; /* Align text box to the left */
+}
+
+#contact {
+    background: url('./images/contact.png') no-repeat left center;
+    background-size: cover;
+    justify-content: flex-end; /* Align text box to the right */
+}
+
+/* Content box styles */
+.content-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    max-width: 40%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Left and right box positioning */
+.left-box .content-box {
+    margin-left: 10%;
+}
+
+.right-box .content-box {
+    margin-right: 10%;
+}
+
+/* Ensure the first section has no margin at the top */
+section:first-of-type {
+    margin-top: 0;
+}
+
+.accordion {
+    background-color: #007bb5;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    text-align: left;
+    outline: none;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-radius: 25px; /* Rounded edges */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .accordion:hover {
+        background-color: #005f80;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+    }
+
+    .accordion:after {
+        content: '\002B'; /* Plus sign */
+        float: right;
+        font-size: 20px;
+    }
+
+    .accordion.active:after {
+        content: '\2212'; /* Minus sign */
+    }
+
+    /* Nested accordion styles */
+    .accordion.nested {
+        background-color: #005f80; /* Slightly different shade */
+        font-size: 16px; /* Smaller font size */
+        padding: 15px;
+        border-radius: 20px; /* Smaller rounding */
+    }
+
+        .accordion.nested:hover {
+            background-color: #004b63;
+        }
+.accordion-toggle {
+    display: inline-block;
+    margin-right: 10px; /* Space between toggle and text */
+    font-weight: bold;
+    font-size: 1.5em; /* Adjust size as needed */
+}
+
+.accordion-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    display: none; /* Hide content by default */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+    /* Change plus sign to minus when active */
+    .accordion-content.active {
+        display: block; /* Show content when active */
+    }
+
+.accordion-header.active .accordion-toggle {
+    content: '-'; /* Change to minus sign when active */
+}
+
+
+.panel.nested {
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+
+h2 {
+    color: #333;
+    font-size: 2.5em;
+}
+
+ul, p {
+    color: #333;
+    font-size: 1.2em;
+}
+
+footer {
+    background-color: #007bb5;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .left-box .content-box, .right-box .content-box {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.accordion {
+    width: 100%;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+}
+
+.accordion-header {
+    background-color: #00bcd4;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.accordion-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 5px;
+    display: none; /* Hide content by default */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+    /* Style for active accordion item */
+    .accordion-content.active {
+        display: block; /* Show content when active */
+    }
+
