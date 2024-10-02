@@ -10,14 +10,14 @@
 
     <header>
         <h1>Nathan Lewis</h1>
-        <p>Innovator and Developer</p>
+        <p>Higher Ed Professional, Innovator, and Developer</p>
     </header>
 
     <main>
         <section id="about" class="left-box">
             <div class="content-box">
                 <h2>About Me</h2>
-                <p>Welcome to my personal webpage! I'm Nathan Lewis, an innovator and developer with a passion for creating solutions that make a difference.</p>
+                <p>Welcome to my personal webpage! I'm Nathan Lewis, a higher education business operations professional, innovator, and developer with a passion for creating solutions that make a difference.</p>
             </div>
         </section>
 
@@ -27,26 +27,48 @@
                 <div class="accordion">
                     <div class="accordion-item">
                         <div class="accordion-header">
-                            <span class="accordion-toggle">+</span> Project 1
+                            <span class="accordion-toggle">+</span> NASA SUITS
                         </div>
                         <div class="accordion-content">
-                            <p>Description of your first project.</p>
+                            <p>In May of 2024, I participated as a developer in the NASA SUITS challenge, which tasked a team of students with developing a local mission control that connected with an augmented reality application worn by astronauts on Mars. We participated in Test Week at Johnson Space Center in Houston, Texas where our application was used by NASA staff, including Anil Menon (pictured), a current astronaut on NASA's Artemis mission.</p>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header">
-                            <span class="accordion-toggle">+</span> Project 2
+                            <span class="accordion-toggle">+</span> Game Development
                         </div>
                         <div class="accordion-content">
-                            <p>Description of your second project.</p>
+                            <p>Here's a game I developed in 2015 called "Get Schooled!"'</p>
+
+                            <!-- Video Player -->
+                            <div id="video-player">
+                                <video id="project-video" controls>
+                                    <source src="./images/GetSchooled.mp4" type="video/mp4">
+                                    Your browser does not support the video element.
+                                </video>
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header">
-                            <span class="accordion-toggle">+</span> Project 3
+                            <span class="accordion-toggle">+</span> Music
                         </div>
                         <div class="accordion-content">
-                            <p>Description of your third project.</p>
+                            <p>I am a singer/songwriter and have worked on a few projects throughout the years. Below are a few examples from throughout the years, from my early work with Cutting Cages to a demo written this year for my wife and I's 5th anniversary.</p>
+                            <div id="music-player">
+
+                                <audio id="audio-player" controls>
+                                    <source id="audio-source" src="./audio/Carnal Fear.mp3" type="audio/mp3">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <br>
+                                <select id="song-selector">
+                                    <option value="./audio/Carnal Fear.mp3">Carnal Fear - Cutting Cages - 2011</option>
+                                    <option value="./audio/Savior, Save Yourself.mp3">Savior, Save Yourself - Cutting Cages ft. Mul3 - 2012</option>
+                                    <option value="./audio/Washed Away.mp3">Washed Away - Zoe Cecil, Nathan Lewis - 2018</option>
+                                    <option value="./audio/Overdue (For Megan).m4a">Overdue (Demo) - Nathan Lewis - 2024</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,7 +82,16 @@
                 <div class="accordion">
                     <div class="accordion-item">
                         <div class="accordion-header">
-                            <span class="accordion-toggle">+</span> Company 1
+                            <span class="accordion-toggle">+</span> Wichita State University
+                        </div>
+                        <div class="accordion-content">
+                            <p>Associate Director of Business Operations - 05/2023 - current
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span class="accordion-toggle">+</span> Boise State University
                         </div>
                         <div class="accordion-content">
                             <p>Role and duration.</p>
@@ -68,15 +99,7 @@
                     </div>
                     <div class="accordion-item">
                         <div class="accordion-header">
-                            <span class="accordion-toggle">+</span> Company 2
-                        </div>
-                        <div class="accordion-content">
-                            <p>Role and duration.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header">
-                            <span class="accordion-toggle">+</span> Company 3
+                            <span class="accordion-toggle">+</span> FedEx Office
                         </div>
                         <div class="accordion-content">
                             <p>Role and duration.</p>
@@ -91,8 +114,8 @@
         <section id="contact" class="right-box">
             <div class="content-box">
                 <h2>Contact</h2>
-                <p><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-profile" target="_blank">Your LinkedIn Profile</a></p>
+                <p><strong>Email:</strong> <a href="mailto:nathansamuellewis@gmail.com">NathanSamuelLewis@gmail.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nathan-samuel-lewis" target="_blank">Nathan Lewis on LinkedIn</a></p>
             </div>
         </section>
     </main>
@@ -120,6 +143,104 @@
                     if (otherHeader !== header) {
                         otherHeader.nextElementSibling.classList.remove('active');
                         otherHeader.querySelector('.accordion-toggle').textContent = '+';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const toggle = header.querySelector('.accordion-toggle');
+
+                // Toggle active class on content
+                content.classList.toggle('active');
+
+                // Change the toggle sign
+                toggle.textContent = content.classList.contains('active') ? '-' : '+';
+
+                // Close other accordions
+                accordionHeaders.forEach(otherHeader => {
+                    if (otherHeader !== header) {
+                        otherHeader.nextElementSibling.classList.remove('active');
+                        otherHeader.querySelector('.accordion-toggle').textContent = '+';
+                    }
+                });
+            });
+        });
+
+
+
+        if (playButton && pauseButton) {
+            playButton.addEventListener('click', () => {
+                audioPlayer.play();
+            });
+
+            pauseButton.addEventListener('click', () => {
+                audioPlayer.pause();
+            });
+        }
+    </script>
+    <script>
+        const audioPlayer = document.getElementById('audio-player');
+        const audioSource = document.getElementById('audio-source');
+        const songSelector = document.getElementById('song-selector');
+
+        // Update audio source when a new song is selected
+        songSelector.addEventListener('change', function () {
+            audioSource.src = this.value;
+            audioPlayer.load(); // Reload the audio player with the new source
+            audioPlayer.play(); // Play the new song automatically
+        });
+
+        // Optionally, play the next song automatically when one finishes
+        audioPlayer.addEventListener('ended', function () {
+            const currentIndex = songSelector.selectedIndex;
+            const nextIndex = (currentIndex + 1) % songSelector.options.length; // Loop back to the first song
+            songSelector.selectedIndex = nextIndex; // Set the dropdown to the next song
+            audioSource.src = songSelector.value; // Change the audio source to the next song
+            audioPlayer.load(); // Reload the player with the new source
+            audioPlayer.play(); // Play the next song automatically
+        });
+    </script>
+    <script>
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const toggle = header.querySelector('.accordion-toggle');
+
+                // Toggle active class on content
+                content.classList.toggle('active');
+
+                // Change the toggle sign
+                toggle.textContent = content.classList.contains('active') ? '-' : '+';
+
+                // Auto-play video when accordion opens
+                if (content.classList.contains('active')) {
+                    const video = content.querySelector('video');
+                    if (video) {
+                        video.play();
+                    }
+                }
+
+                // Close other accordions
+                accordionHeaders.forEach(otherHeader => {
+                    if (otherHeader !== header) {
+                        const otherContent = otherHeader.nextElementSibling;
+                        otherContent.classList.remove('active');
+                        otherHeader.querySelector('.accordion-toggle').textContent = '+';
+
+                        // Pause any other open video
+                        const otherVideo = otherContent.querySelector('video');
+                        if (otherVideo) {
+                            otherVideo.pause();
+                        }
                     }
                 });
             });
