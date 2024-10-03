@@ -10,6 +10,14 @@ body {
     color: #333;
 }
 
+body, header, footer {
+    margin: 0;
+    padding: 0;
+    width: 100vw; /* Full viewport width */
+}
+
+
+
 header {
     background-color: #00bcd4;
     color: white;
@@ -17,7 +25,7 @@ header {
     text-align: center;
     position: sticky;
     top: 0;
-    width: 110%;
+    width: 100vw; /* Full viewport width */
     z-index: 1000;
 }
 
@@ -31,7 +39,7 @@ section {
     display: flex;
     position: relative;
     background-size: cover;
-    width: 100vw;
+    width: 100vw; /* Full viewport width */
     margin: 0;
     padding: 20px;
     align-items: center; /* Center content vertically */
@@ -167,6 +175,8 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+    width: 100vw; /* Full viewport width */
+    position: relative; /* Adjust this based on layout */
 }
 
 /* For smaller screens */
